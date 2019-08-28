@@ -1,0 +1,25 @@
+{
+  "environment": "production",
+  "hydra": {
+    "serviceName": "test-hydra-1",
+    "serviceIP": "",
+    "servicePort": 3000,
+    "serviceType": "testHydra",
+    "serviceDescription": "test everything about hydra and says hello",
+    "plugins": {
+      "logger": {
+        "logRequests": true,
+        "elasticsearch": {
+          "host": "localhost",
+          "port": 9200,
+          "index": "hydra"
+        }
+      }
+    },
+    "redis": {
+      "url": "127.0.0.1",
+      "port": 6379,
+      "db": 15
+    }
+  }
+}
