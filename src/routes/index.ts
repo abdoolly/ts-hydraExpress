@@ -1,5 +1,5 @@
-import { HydraExpress, Logger } from '../helpers/HydraExpress';
-import { AppResponse, AppRequest } from '../interfaces/ExpressApp';
+import { HydraExpress } from '../helpers/HydraExpress';
+import { AppRequest, AppResponse } from '../interfaces/ExpressApp';
 
 const hydra = HydraExpress.getHydra();
 const express = HydraExpress.getExpress();

@@ -24,7 +24,7 @@ process.on('SIGINT', () => {
     process.exit(0);
 });
 
-let configPath = process.env.NODE_ENV === 'production' ? './config/prod-config.json' : './config/dev-config.json';
+const configPath = process.env.NODE_ENV === 'production' ? './config/prod-config.json' : './config/dev-config.json';
 
 /**
  * Load configuration file and initialize hydraExpress app
