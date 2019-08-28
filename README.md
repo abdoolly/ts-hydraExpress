@@ -15,7 +15,7 @@ first run this command to pull the redis image to your device
 then you can start the redis container using this command
 
 ```
-docker run -p 6379:6379 --name some-redis -d redis
+    docker run -p 6379:6379 --name some-redis -d redis
 ```
 
 now you are good to go
