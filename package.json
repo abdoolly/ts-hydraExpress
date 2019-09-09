@@ -9,34 +9,30 @@
     "start:prod": "npm run build && NODE_ENV=production node dist/app.js",
     "build": "tsc",
     "debug": "node-debug testHydra-service.js --debug-brk",
-    "test": "jest",
-    "lint": "eslint --ext .js,.ts ./ --fix"
+    "test": "jest"
   },
   "engines": {
     "node": ">=6.2.1"
   },
   "dependencies": {
-    "eslint-config-prettier": "^6.1.0",
     "fwsp-config": "1.1.5",
+    "fwsp-jsutils": "^1.0.10",
     "fwsp-logger": "0.3.4",
-    "fwsp-server-response": "2.2.6",
-    "hydra-express": "1.7.1"
+    "hydra-promoted": "^1.0.10",
+    "inversify-manager": "^1.0.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.1",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.2",
-    "@types/ramda": "^0.26.21",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "eslint": "^6.2.2",
-    "eslint-plugin-prettier": "^3.1.0",
-    "express": "^4.17.1",
+    "inversify": "^5.0.1",
     "jest": "^24.9.0",
+    "nodemon": "^1.19.1",
+    "reflect-metadata": "^0.1.13",
     "superagent": "3.5.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.6.2"
   },
   "nodemonConfig": {
     "ignore": [
@@ -46,7 +42,8 @@
       "node_modules"
     ],
     "watch": [
-      "src"
+      "src",
+      "config"
     ],
     "exec": "npm start",
     "ext": "ts"

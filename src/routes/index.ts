@@ -1,28 +1,11 @@
-import { HydraExpress } from '../helpers/HydraExpress';
-import { AppRequest, AppResponse } from '../interfaces/ExpressApp';
+import { Router } from 'hydra-promoted';
 
-const hydra = HydraExpress.getHydra();
-const express = HydraExpress.getExpress();
-const ServerResponse = require('fwsp-server-response');
+Router.get('/', 'TestMiddlewareExample', 'ExampleController@index');
 
-const serverResponse = new ServerResponse();
+// exmaple of using with middlewares
+// Router.get('/testPath', 'TestMiddlewareExample', 'HomeController@index');
 
-serverResponse.enableCORS(true);
+// exmaple of using with multiple middlwares
+// Router.get('/testPath', ['middleware1', 'middleware2'], 'testController@testMethod');
 
-express.response.sendError = function(err: Error) {
-    serverResponse.sendServerError(this, { result: { error: err } });
-};
-
-express.response.sendOk = function(this: Response, result) {
-    serverResponse.sendOk(this, { result });
-};
-
-const api = express.Router();
-
-api.get('/', async (req: AppRequest, res: AppResponse) => {
-    res.sendOk({
-        greeting: `Welcome to ${hydra.getServiceName()} - ${hydra.getInstanceID()}`
-    });
-});
-
-module.exports = api;
+module.exports = Router.getRouter();

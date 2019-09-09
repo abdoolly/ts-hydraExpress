@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  hydra-1:
+    build: .
+    container_name: hydra-1
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app
+    networks: 
+      - hydra-network
+
+networks:
+  hydra-network:
+    external:
+      name: hydra-network
