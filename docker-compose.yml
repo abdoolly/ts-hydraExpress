@@ -11,7 +11,19 @@ services:
     networks: 
       - hydra-network
 
+  redis:
+    image: redis
+    container_name: hydra-redis
+    ports:
+      - 6379:6379
+    networks: 
+      - hydra-network
+
+# networks:
+#   hydra-network:
+#     external:
+#       name: hydra-network
+
 networks:
   hydra-network:
-    external:
       name: hydra-network
