@@ -42,8 +42,7 @@
       "node_modules"
     ],
     "watch": [
-      "src",
-      "config"
+      "src"
     ],
     "exec": "npm start",
     "ext": "ts"
