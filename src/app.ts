@@ -28,21 +28,21 @@ const addingExpressResponseOptions = () => {
     ServerResponse.enableCORS(true);
 
     // adding hydra sendError response objects
-    Express.response.sendError = function(err: Error) {
+    Express.response.sendError = function (err: Error) {
         ServerResponse.sendServerError(this, { result: { error: err } });
     };
 
     // adding hydra sendOk to response object
-    Express.response.sendOk = function(this: Response, result) {
+    Express.response.sendOk = function (this: Response, result) {
         ServerResponse.sendOk(this, { result });
     };
 };
 
 // choosing config based on the NODE_ENV variable
 const configPath =
-  process.env.NODE_ENV === 'production' ?
-      './src/config/prod-config.json' :
-      './src/config/dev-config.json';
+    process.env.NODE_ENV === 'production' ?
+        './src/config/prod-config.json' :
+        './src/config/dev-config.json';
 
 Controllers.provide('./src/controllers/');
 Middlewares.provide('./src/middlewares/');

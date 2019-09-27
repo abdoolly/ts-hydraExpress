@@ -4,12 +4,13 @@ import { ExampleService } from '../serviceProviders/ExampleService';
 
 @injectable()
 export class ExampleController {
-    constructor(public testService: ExampleService) {}
+
+    constructor(public testService: ExampleService) { }
 
     index(req: AppRequest, res: AppResponse) {
         this.testService.testMe();
         return res.sendOk({
-            hello: 'world'
+            hello: 'hello world'
         });
     }
 }

@@ -5,6 +5,9 @@ import { ExampleService } from '../serviceProviders/ExampleService';
 DIManager.registerCustomServices(container => {
     // this is used to make custom cases using inversify which has not been included yet
     // in the DIManager
+
 });
 
-DIManager.registerServices([ExampleService, ExampleController]);
+DIManager.registerServices([
+    ExampleService,
+]);
